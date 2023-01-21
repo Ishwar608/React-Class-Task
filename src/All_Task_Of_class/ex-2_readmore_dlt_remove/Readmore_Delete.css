@@ -49,3 +49,7 @@ span{
     text-align: center;
     padding: 10px;
 }
+.read{
+    color: red;
+    cursor: pointer;
+}

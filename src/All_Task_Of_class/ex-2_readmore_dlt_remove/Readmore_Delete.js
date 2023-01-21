@@ -3,7 +3,7 @@ import './Readmore_Delete.css'
 
 export const Readmore_Delete = () => {
     const [data, setData] = useState([]);
-    const [rd,setRd] = useState(30);
+    // const [rd,setRd] = useState(30);
     useEffect(() => {
         fetch("https://fakestoreapi.com/products").then(y => y.json())
             .then(y => {
@@ -16,7 +16,18 @@ export const Readmore_Delete = () => {
         setData(d);
     }
     const reaMore = (index) =>{
-        document.getElementById(index).innerHTML = data[index].description;
+        const txt = document.getElementsByClassName('read')[index].attributes.data;
+        
+        if(txt.value.includes('small')){
+            txt.value = 'full'
+            document.getElementById(index).innerHTML = data[index].description;
+            document.getElementsByClassName('read')[index].innerHTML = "...Read Less";     
+        }else{
+            txt.value = 'small'
+            document.getElementsByClassName('read')[index].innerHTML = "...Read More";     
+            document.getElementById(index).innerHTML = data[index].description.slice(0 , 30);
+        }
+        
     }
     return (
         <div className='container'>
@@ -26,11 +37,12 @@ export const Readmore_Delete = () => {
                     <img src={element.image} />
                     <div>
                     <p>{element.title.slice(0, 28)}</p>
-                    <p id={index}>{element.description.slice(0, rd)} </p> <a onClick={()=>reaMore(index)}>..Read More</a>
+                    <p id={index} className="dis">{element.description.slice(0, 30)} </p> <a class="read" data="small" onClick={()=>reaMore(index)}>..Read More</a>
                     <p><span>Price:-</span>{element.price}</p>
                     <div className='btndiv'>
                         <button className='btn' onClick={() => dltData(index)}>Delete</button>
                     </div>
+                    
                     </div>
                 </div>
             })}
