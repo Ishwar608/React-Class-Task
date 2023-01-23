@@ -11,9 +11,11 @@ export default function Next_Pre_Button() {
         }
     }
     const nextBtn = () =>{
-        if(index < 5){
-            setIndex(index+1);
-        } 
+        if(index == data.length-1){
+            setIndex(0);
+        } else{
+          setIndex(index+1);
+        }
     }
     return (
     <div>
@@ -34,10 +36,10 @@ export default function Next_Pre_Button() {
                 </p>
                    <div className="button-container">
                   <button className="prev-btn" onClick={prevBtn}>
-                    &larr;
+                    ◀ 
                   </button>
                   <button className="next-btn" onClick={nextBtn}>
-                    &rarr;
+                    ▶
                   </button>
                 </div>
                 <button className="random-btn">surprise me</button>
