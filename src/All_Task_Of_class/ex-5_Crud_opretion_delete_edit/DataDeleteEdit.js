@@ -10,6 +10,7 @@ export const DataDeleteEdit = () => {
     const inputHandlar = (e) => {
         setInpt(e.target.value);
     }
+
     const saveData = () => {
         let myitem = [...item];
         console.log(editItem);

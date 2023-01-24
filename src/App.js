@@ -5,7 +5,18 @@ import './App.css';
 // import { Readmore_Delete } from './All_Task_Of_class/ex-2_readmore_dlt_remove/Readmore_Delete';
 // import Next_Pre_Button from './All_Task_Of_class/ex-3_review_next_pre/Next_Pre_Button';
 // import SearchData from './All_Task_Of_class/ex-4_search_data/SearchData';
-import {DataDeleteEdit} from './All_Task_Of_class/ex-5_Crud_opretion_delete_edit/DataDeleteEdit';
+// import {DataDeleteEdit} from './All_Task_Of_class/ex-5_Crud_opretion_delete_edit/DataDeleteEdit';
+
+import { Registration } from './All_Task_Of_class/ex-6_Form_validation/Registration';
+
+
+
+
+
+
+
+
+
 function App() {
   return (
     // <Ex_1_usestate/> 
@@ -13,7 +24,8 @@ function App() {
     // <Readmore_Delete/>
     // <Next_Pre_Button/>
     // <SearchData/>
-    <DataDeleteEdit/>
+    // <DataDeleteEdit/>
+    <Registration/>
   );
 }
 
