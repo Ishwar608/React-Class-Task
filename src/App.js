@@ -6,10 +6,9 @@ import './App.css';
 // import Next_Pre_Button from './All_Task_Of_class/ex-3_review_next_pre/Next_Pre_Button';
 // import SearchData from './All_Task_Of_class/ex-4_search_data/SearchData';
 // import {DataDeleteEdit} from './All_Task_Of_class/ex-5_Crud_opretion_delete_edit/DataDeleteEdit';
+// import { Registration } from './All_Task_Of_class/ex-6_Form_validation/Registration';
 
-import { Registration } from './All_Task_Of_class/ex-6_Form_validation/Registration';
-
-
+import { AxiosAPI } from './All_Task_Of_class/ex-7_axios/AxiosAPI';
 
 
 
@@ -25,7 +24,8 @@ function App() {
     // <Next_Pre_Button/>
     // <SearchData/>
     // <DataDeleteEdit/>
-    <Registration/>
+    // <Registration/>
+    <AxiosAPI/>
   );
 }
 
