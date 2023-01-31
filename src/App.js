@@ -8,7 +8,8 @@ import './App.css';
 // import {DataDeleteEdit} from './All_Task_Of_class/ex-5_Crud_opretion_delete_edit/DataDeleteEdit';
 // import { Registration } from './All_Task_Of_class/ex-6_Form_validation/Registration';
 
-import { AxiosAPI } from './All_Task_Of_class/ex-7_axios/AxiosAPI';
+// import { AxiosAPI } from './All_Task_Of_class/ex-7_axios/AxiosAPI';
+import { Registration } from './All_Task_Of_class/ex-8_Formik_form/Registration';
 
 
 
@@ -25,7 +26,8 @@ function App() {
     // <SearchData/>
     // <DataDeleteEdit/>
     // <Registration/>
-    <AxiosAPI/>
+    // <AxiosAPI/>
+    <Registration/>
   );
 }
 
