@@ -29,7 +29,9 @@ export const Registration = () => {
             .email('Invalid email')
             .required('Please Enter Your Email!'),
 
-        password: Yup.string().required("Please Enter Password"),
+        password: Yup.string()
+        .matches(/^(?=.[A-Za-z])(?=.[0-9])(?=.[@$!%#?&])[A-Za-z0-9@$!%*#?&]{8,}$/, 'Must use Alpha Numeric with special char and length 8 must be 8 charcarter')
+        .required("Please Enter Password"),
 
         confirmPassword: Yup.string().required("Please Enter Confirm Password").
             oneOf([null, Yup.ref('password')], "password should match"),
