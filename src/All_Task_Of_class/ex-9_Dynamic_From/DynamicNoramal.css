@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1200px;
+    margin: auto;
+}
+.h3{
+    font-size: 25px;
+    color: blue;
+    font-weight: bold;
+}
+.h2{
+    font-size: 25px;
+    color: rgb(7, 209, 91);
+    font-weight: bold;
+}
+label{
+    display: inline-block;
+    width: 200px;
+}
+input,select{
+    margin: 5px;
+    padding: 5px 10px;
+}
+.btn{
+    margin: 5px;
+    padding: 5px 10px;
+}

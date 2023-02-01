@@ -18,8 +18,8 @@ export const Registration = () => {
             .max(10, 'Too Long!')
             .required('Please Enter Your Last Name !'),
 
-        // gender: Yup.string()
-        // .required('Please Select Gender!'),
+        gender: Yup.string()
+        .required('Please Select Gender!'),
 
         dob: Yup.date()
             .max(new Date(Date.now() - 567648000000), "You must be at least 18 years")
@@ -96,11 +96,11 @@ export const Registration = () => {
                                     <label>
                                         <Field type="radio" name="gender" value={gen} />
                                         {gen}
-                                        {/* <ErrorMessage name="gender" /> */}
                                     </label>
                                 );
                             })
                         }
+                        <ErrorMessage name="gender" />
                     </div>
                     <div>
                         <label htmlFor="dob">Date of Birth</label>
