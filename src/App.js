@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import { RegistrationFormik } from './All_Task_Of_class/ex-8_Formik_form/RegistrationFormik';
+import DynamicFormMaterial from './All_Task_Of_class/ex-9_Dynamic_From/DynamicFormMaterial';
+// import { RegistrationFormik } from './All_Task_Of_class/ex-8_Formik_form/RegistrationFormik';
 //import DynamicNoramal from './All_Task_Of_class/ex-9_Dynamic_From/DynamicNoramal';
 // import Ex_1_usestate from './All_Task_Of_class/daily_routine_task/Ex_1_usestate'
 // import { ClearAndShowData } from './All_Task_Of_class/ex-1_usestate_cleardata/ClearAndShowData';
@@ -29,7 +30,8 @@ function App() {
     // <AxiosAPI/>
     // <Registration/>
     // <DynamicNoramal/>
-    <RegistrationFormik />
+    // <RegistrationFormik />
+    <DynamicFormMaterial/>
   );
 }
 
