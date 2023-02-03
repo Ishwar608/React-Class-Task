@@ -64,9 +64,7 @@ export const EmployeDetails = () => {
                                         <div className="form-group">
                                             <label>Number of Tickets :-</label>
                                  <Field name="numberOfTickets"  >
-                                   
-        
-                                   
+                                                                      
                                             {({ field }) => (
                                                 <select {...field}
                                                  className={'form-control' + (errors.numberOfTickets && touched.numberOfTickets ? ' is-invalid' : '')} 
@@ -119,11 +117,6 @@ export const EmployeDetails = () => {
                         </Form>
                     )}
                 </Formik>
-        
-        
-        
-        
-        
             </div>
     )
 }

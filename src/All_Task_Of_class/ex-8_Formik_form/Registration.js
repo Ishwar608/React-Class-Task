@@ -1,6 +1,8 @@
 import React from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from "yup";
+import { Button, Checkbox, Container, FormControl, FormControlLabel, InputLabel, MenuItem, Radio, RadioGroup, Select, TextField, Typography } from '@mui/material';
+import { Box, textAlign } from '@mui/system';
 
 export const Registration = () => {
     let gender = ["Male", "Female", "Other"];
@@ -19,7 +21,7 @@ export const Registration = () => {
             .required('Please Enter Your Last Name !'),
 
         gender: Yup.string()
-        .required('Please Select Gender!'),
+            .required('Please Select Gender!'),
 
         dob: Yup.date()
             .max(new Date(Date.now() - 567648000000), "You must be at least 18 years")
@@ -30,30 +32,46 @@ export const Registration = () => {
             .required('Please Enter Your Email!'),
 
         password: Yup.string()
-        .matches(/^(?=.[A-Za-z])(?=.[0-9])(?=.[@$!%#?&])[A-Za-z0-9@$!%*#?&]{8,}$/, 'Must use Alpha Numeric with special char and length 8 must be 8 charcarter')
-        .required("Please Enter Password"),
+            .matches(/^(?=.[A-Za-z])(?=.[0-9])(?=.[@$!%#?&])[A-Za-z0-9@$!%*#?&]{8,}$/, 'Must use Alpha Numeric with special char and length 8 must be 8 charcarter')
+            .required("Please Enter Password"),
 
         confirmPassword: Yup.string().required("Please Enter Confirm Password").
             oneOf([null, Yup.ref('password')], "password should match"),
 
         phoneNO: Yup.string()
-        .required()
-        .matches(/^[0-9]+$/, "Must be only digits")
-        .max(10, "Must be exactly 10 digits"),
+            .required()
+            .matches(/^[0-9]+$/, "Must be only digits")
+            .max(10, "Must be exactly 10 digits"),
 
         zipcode: Yup.string()
-        .required()
-        .matches(/^[0-9]+$/, "Must be only digits")
-        .min(5, "Must be exactly 6 digits")
-        .max(6, "Must be exactly 6 digits"),
+            .required()
+            .matches(/^[0-9]+$/, "Must be only digits")
+            .min(5, "Must be exactly 6 digits")
+            .max(6, "Must be exactly 6 digits"),
 
         acceptTerm: Yup.boolean()
-        .oneOf([true], "You must accept the terms and conditions")
+            .oneOf([true], "You must accept the terms and conditions")
     });
 
+    const ErrorM = ({ children }) => {
+        return (
+            <div>
+                <font color="red">{children}</font>
+            </div>
+        );
+    };
     return (
-        <div>
-            Registration
+        <Container maxWidth="sm"
+        >
+            <Typography component="h1"
+                sx={{
+                    m: 3,
+                    textAlign: 'center',
+                }}
+                variant="h5">
+
+                Registration
+            </Typography>
             <Formik
                 initialValues={{
                     firstName: '',
@@ -78,116 +96,188 @@ export const Registration = () => {
                 }}
             >
                 <Form>
-                    <div>
-                        <label htmlFor="firstName">First Name</label>
-                        <Field id="firstName" name="firstName" placeholder="Enter your First Name" />
-                        <ErrorMessage name="firstName" />
-                    </div>
-                    <div>
-                        <label htmlFor="lastName">Last Name</label>
-                        <Field id="lastName" name="lastName" placeholder="Please your Last Name" />
-                        <ErrorMessage name="lastName" />
-                    </div>
-                    <div>
-                        <div id="my-radio-group">Gender</div>
+                    <TextField
+                        id="firstName"
+                        name="firstName"
+                        variant="outlined"
+                        label="First Name"
+                        sx={{ m: 1 }}
+                    />
+                    <ErrorMessage name="firstName" component={ErrorM} />
+
+                    <TextField
+                        id="lastName"
+                        name="lastName"
+                        variant="outlined"
+                        label="Last Name"
+                        sx={{ m: 1 }}
+                    />
+                    <ErrorMessage name="lastName" component={ErrorM} />
+
+                    <RadioGroup
+                        row
+                        sx={{ m: 1 }}
+                        aria-labelledby="demo-row-radio-buttons-group-label"
+                    >
                         {
                             gender.map((gen) => {
                                 return (
-                                    <label>
-                                        <Field type="radio" name="gender" value={gen} />
-                                        {gen}
-                                    </label>
+                                    <FormControlLabel
+                                        name="gender"
+                                        value={gen}
+                                        control={<Radio />}
+                                        label={gen} />
                                 );
                             })
                         }
-                        <ErrorMessage name="gender" />
-                    </div>
-                    <div>
-                        <label htmlFor="dob">Date of Birth</label>
-                        <Field type="date" id="dob" name="dob" />
-                        <ErrorMessage name="dob" />
-                    </div>
-                    <div>
-                        <label htmlFor="email">Email</label>
-                        <Field
-                            id="email"
-                            name="email"
-                            placeholder="jane@acme.com"
-                            type="email"
-                        />
-                        <ErrorMessage name="email" />
-                    </div>
+                    </RadioGroup>
+                    <ErrorMessage name="gender" component={ErrorM} />
 
-                    <div>
-                        <label htmlFor="password">Password</label>
-                        <Field type="password" id="password" name="password" placeholder="Enter your Password" />
-                        <ErrorMessage name="password" />
-                    </div>
+                    <TextField
+                        type="date"
+                        id="dob"
+                        name="dob"
+                        variant="outlined"
+                        label="Date Of Birth"
+                        InputLabelProps={{
+                            shrink: true,
 
-                    <div>
-                        <label htmlFor="confirmPassword">Confirm password</label>
-                        <Field type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter your Password" />
+                        }}
+                        sx={{ m: 1, width: "225px" }}
+                    />
+                    <ErrorMessage name="dob" component={ErrorM} />
 
-                        <ErrorMessage name="confirmPassword" />
-                    </div>
+                    <TextField
+                        id="email"
+                        name="email"
+                        placeholder="jane@acme.com"
+                        type="email"
+                        variant="outlined"
+                        label="Email"
+                        sx={{ m: 1 }}
+                    />
+                    <ErrorMessage name="email" component={ErrorM} />
 
-                    <div>
-                        <label htmlFor="phoneNO">Mobile NO</label>
-                        <Field id="phoneNO" name="phoneNO" placeholder="Enter your Mobile NO" />
-                        <ErrorMessage name="phoneNO" />
-                    </div>
+                    <TextField
+                        type="password"
+                        id="password"
+                        name="password"
+                        variant="outlined"
+                        label="Password"
+                        sx={{ m: 1 }}
+                    />
+                    <ErrorMessage name="password" component={ErrorM} />
 
-                    <div>
-                        <label htmlFor="Address">Address</label>
-                        <Field id="Address" name="Address" placeholder="Enter your Address" />
-                    </div>
+                    <TextField
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        variant="outlined"
+                        label="Confirm Password"
+                        sx={{ m: 1 }}
+                    />
 
-                    <div>
-                        <label htmlFor="City">City</label>
-                        <Field name="City" as="select">
+                    <ErrorMessage name="confirmPassword" component={ErrorM} />
+
+
+                    <TextField
+                        id="phoneNO"
+                        name="phoneNO"
+                        variant="outlined"
+                        margin="normal"
+                        label="Mobile No"
+                        sx={{ m: 1 }}
+
+                    />
+
+                    <ErrorMessage name="phoneNO" component={ErrorM} />
+
+
+                    <TextField
+                        id="Address"
+                        name="Address"
+                        variant="outlined"
+                        margin="normal"
+                        label="Address"
+                        sx={{ m: 1 }}
+
+                    />
+                    <FormControl>
+                        <InputLabel id="demo-simple-select-label">Select City</InputLabel>
+                        <Select
+                            name='City'
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            sx={{ m: 1, width: "225px" }}
+
+                        >
+
                             {
                                 cities.map((city) => {
                                     return (
-                                        <option value={city}>{city}</option>
+                                        <MenuItem value={city}>{city}</MenuItem>
                                     );
                                 })
                             }
-                        </Field>
-                    </div>
+                        </Select>
+                    </FormControl>
 
-                    <div>
-                        <label htmlFor="state">State</label>
-                        <Field name="State" as="select">
+
+
+                    <FormControl>
+                        <InputLabel id="demo-simple-select-label">Select City</InputLabel>
+                        <Select
+                            name='State'
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            sx={{ m: 1, width: "225px" }}
+
+                        >
                             {
                                 states.map((stat) => {
                                     return (
-                                        <option value={stat}>{stat}</option>
+                                        <MenuItem value={stat}>{stat}</MenuItem>
                                     );
                                 })
                             }
-                        </Field>
-                    </div>
+                        </Select>
+                    </FormControl>
 
-                    <div>
-                        <label htmlFor="zipcode">Zip-Code</label>
-                        <Field id="zipcode" name="zipcode" placeholder="Enter your Zipcode" />
-                        <ErrorMessage name="zipcode" />
-                    </div>
+                    <TextField
+                        id="zipcode"
+                        name="zipcode"
+                        variant="outlined"
+                        label="zipcode"
+                        sx={{ m: 1 }}
+
+                    />
+                    <ErrorMessage name="zipcode" component={ErrorM} />
+
+                    <Box>
+                        <FormControlLabel
+                            control={<Checkbox typeof='checkbox' name="acceptTerm" value="remember" color="primary" />}
+                            label="Accept term and Condition"
+                            sx={{ m: 1 }}
+
+                        />
+                    </Box>
 
 
+                    <ErrorMessage name="acceptTerm" component={ErrorM} />
+                    <Box sx={{textAlign: 'center'}}>
 
-                    <div>
-                        <label>
-                            <Field type="checkbox" name="acceptTerm" />
-                            Accept term and Condition
-                        </label>
-                        <ErrorMessage name="acceptTerm" />
-                    </div>
-
-                    <button type="submit">Submit</button>
-
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            sx={{
+                                mt: 3, mb: 2,width:'180px'
+                            }}
+                        >
+                            Sign In
+                        </Button>
+                    </Box>
                 </Form>
             </Formik>
-        </div>
+        </Container >
     )
 }

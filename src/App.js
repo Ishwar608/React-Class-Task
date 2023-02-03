@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import DynamicFormMaterial from './All_Task_Of_class/ex-9_Dynamic_From/DynamicFormMaterial';
+// import { ExaFormikMatrial } from './All_Task_Of_class/ex-8_Formik_form/ExaFormikMatrial';
+
+// import DynamicFormMaterial from './All_Task_Of_class/ex-9_Dynamic_From/DynamicFormMaterial';
 // import { RegistrationFormik } from './All_Task_Of_class/ex-8_Formik_form/RegistrationFormik';
 //import DynamicNoramal from './All_Task_Of_class/ex-9_Dynamic_From/DynamicNoramal';
 // import Ex_1_usestate from './All_Task_Of_class/daily_routine_task/Ex_1_usestate'
@@ -11,7 +13,7 @@ import DynamicFormMaterial from './All_Task_Of_class/ex-9_Dynamic_From/DynamicFo
 // import {DataDeleteEdit} from './All_Task_Of_class/ex-5_Crud_opretion_delete_edit/DataDeleteEdit';
 // import { Registration } from './All_Task_Of_class/ex-6_Form_validation/Registration';
 // import { AxiosAPI } from './All_Task_Of_class/ex-7_axios/AxiosAPI';
-// import { Registration } from './All_Task_Of_class/ex-8_Formik_form/Registration';
+import { Registration } from './All_Task_Of_class/ex-8_Formik_form/Registration';
 
 
 
@@ -28,10 +30,11 @@ function App() {
     // <DataDeleteEdit/>
     // <Registration/>
     // <AxiosAPI/>
-    // <Registration/>
+    <Registration/>
     // <DynamicNoramal/>
     // <RegistrationFormik />
-    <DynamicFormMaterial/>
+    // <DynamicFormMaterial/>
+    // <ExaFormikMatrial/>
   );
 }
 
