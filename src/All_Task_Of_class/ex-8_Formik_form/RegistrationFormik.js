@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '@mui/material/Container';
-import { Box, Button, Checkbox, FormControl, FormControlLabel, InputLabel, MenuItem, TextField, Typography } from '@mui/material';
+import { Box, Button, Checkbox, FormControl, FormControlLabel, FormHelperText, InputLabel, MenuItem, TextField, Typography } from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from "yup";
 import Radio from '@mui/material/Radio';
@@ -49,7 +49,7 @@ export const RegistrationFormik = () => {
             .min(5, "Must be exactly 6 digits")
             .max(6, "Must be exactly 6 digits"),
 
-        acceptTerm: Yup.boolean()
+        acceptTerm: Yup.bool()
             .oneOf([true], "You must accept the terms and conditions")
 
     });
@@ -129,11 +129,11 @@ export const RegistrationFormik = () => {
                     {
                         gender.map((gen) => {
                             return (
-                                <FormControlLabel 
-                                name="gender"
-                                value={gen} 
-                                control={<Radio />} 
-                                label={gen} />
+                                <FormControlLabel
+                                    name="gender"
+                                    value={gen}
+                                    control={<Radio />}
+                                    label={gen} />
                             );
                         })
                     }
@@ -244,7 +244,7 @@ export const RegistrationFormik = () => {
                     </Select>
                 </FormControl>
 
-                <FormControl fullWidth variant="filled" sx={{mt : 2}}>
+                <FormControl fullWidth variant="filled" sx={{ mt: 2 }}>
                     <InputLabel id="demo-simple-select-filled-label">Select State</InputLabel>
                     <Select
                         required
@@ -279,11 +279,16 @@ export const RegistrationFormik = () => {
 
                 <FormControlLabel
                     control={<Checkbox typeof='checkbox' name="acceptTerm" value="remember" color="primary"
-                        helperText={formik.touched.acceptTerm && formik.errors.acceptTerm}
-                        error={formik.touched.acceptTerm && Boolean(formik.errors.acceptTerm)}
+
                         onClick={formik.handleChange} />}
                     label="Remember me"
-                />
+                >
+
+                    <FormHelperText helperText={formik.touched.acceptTerm && formik.errors.acceptTerm}
+                        error={formik.touched.acceptTerm && Boolean(formik.errors.acceptTerm)}>
+                    </FormHelperText>
+
+                </FormControlLabel>
 
                 <Button
                     type="submit"

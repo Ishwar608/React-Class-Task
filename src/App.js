@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import { MainHeadr } from './All_Task_Of_class/ex-11_Theme_useContext/MainHeadr';
+// import { LanTheme } from './All_Task_Of_class/ex-10_Langauge_Selection/LanTheme';
 // import { ExaFormikMatrial } from './All_Task_Of_class/ex-8_Formik_form/ExaFormikMatrial';
 
 // import DynamicFormMaterial from './All_Task_Of_class/ex-9_Dynamic_From/DynamicFormMaterial';
@@ -13,7 +15,7 @@ import './App.css';
 // import {DataDeleteEdit} from './All_Task_Of_class/ex-5_Crud_opretion_delete_edit/DataDeleteEdit';
 // import { Registration } from './All_Task_Of_class/ex-6_Form_validation/Registration';
 // import { AxiosAPI } from './All_Task_Of_class/ex-7_axios/AxiosAPI';
-import { Registration } from './All_Task_Of_class/ex-8_Formik_form/Registration';
+// import { Registration } from './All_Task_Of_class/ex-8_Formik_form/Registration';
 
 
 
@@ -30,11 +32,13 @@ function App() {
     // <DataDeleteEdit/>
     // <Registration/>
     // <AxiosAPI/>
-    <Registration/>
+    // <Registration/>
     // <DynamicNoramal/>
     // <RegistrationFormik />
     // <DynamicFormMaterial/>
     // <ExaFormikMatrial/>
+    // <LanTheme/>
+    <MainHeadr/>
   );
 }
 

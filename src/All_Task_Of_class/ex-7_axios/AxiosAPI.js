@@ -9,41 +9,41 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 export const AxiosAPI = () => {
-    const [data,setData] = useState([]);
+  const [data, setData] = useState([]);
 
-    useEffect(()=>{
-        axios("https://jsonplaceholder.typicode.com/todos")
-        .then(y=>{
-            setData(y.data);
-        })
-    },[])
-    return (
+  useEffect(() => {
+    axios("https://jsonplaceholder.typicode.com/todos")
+      .then(y => {
+        setData(y.data);
+      })
+  }, [])
+  return (
     <>
-        <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>userId</TableCell>
-            <TableCell >id</TableCell>
-            <TableCell >title</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {data.map((row) => (
-            <TableRow
-              key={row.userId}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.userId}
-              </TableCell>
-              <TableCell >{row.id}</TableCell>
-              <TableCell >{row.title}</TableCell>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>userId</TableCell>
+              <TableCell >id</TableCell>
+              <TableCell >title</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {data.map((row) => (
+              <TableRow
+                key={row.userId}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {row.userId}
+                </TableCell>
+                <TableCell >{row.id}</TableCell>
+                <TableCell >{row.title}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
 
     </>
   )
