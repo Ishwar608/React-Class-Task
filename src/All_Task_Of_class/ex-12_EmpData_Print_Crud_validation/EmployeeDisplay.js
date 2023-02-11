@@ -3,6 +3,7 @@ import CrudOpration from './CrudOpration';
 import DataUseContext from './DataUseContext'
 import './EmployeeDisplay.css'
 import  SearchData  from './SearchData';
+import TableHeading from './TableHeading';
 
 export const EmployeeDisplay = () => {
     const {data, setData} = useContext(DataUseContext);
@@ -20,16 +21,7 @@ export const EmployeeDisplay = () => {
         srcItem={srcItem}
         />
         <table>
-            <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th>Confirm Password</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
+            <TableHeading items={data}/>
             <CrudOpration items={data} setItem = {setData} srcItem={srcItem}/>
         </table>
     </div>
