@@ -1,25 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { MainHeadr } from './All_Task_Of_class/ex-11_Theme_useContext/MainHeadr';
-// import { LanTheme } from './All_Task_Of_class/ex-10_Langauge_Selection/LanTheme';
-// import { ExaFormikMatrial } from './All_Task_Of_class/ex-8_Formik_form/ExaFormikMatrial';
-
-// import DynamicFormMaterial from './All_Task_Of_class/ex-9_Dynamic_From/DynamicFormMaterial';
-// import { RegistrationFormik } from './All_Task_Of_class/ex-8_Formik_form/RegistrationFormik';
-//import DynamicNoramal from './All_Task_Of_class/ex-9_Dynamic_From/DynamicNoramal';
-// import Ex_1_usestate from './All_Task_Of_class/daily_routine_task/Ex_1_usestate'
-// import { ClearAndShowData } from './All_Task_Of_class/ex-1_usestate_cleardata/ClearAndShowData';
-// import { Readmore_Delete } from './All_Task_Of_class/ex-2_readmore_dlt_remove/Readmore_Delete';
-// import Next_Pre_Button from './All_Task_Of_class/ex-3_review_next_pre/Next_Pre_Button';
-// import SearchData from './All_Task_Of_class/ex-4_search_data/SearchData';
-// import {DataDeleteEdit} from './All_Task_Of_class/ex-5_Crud_opretion_delete_edit/DataDeleteEdit';
-// import { Registration } from './All_Task_Of_class/ex-6_Form_validation/Registration';
-// import { AxiosAPI } from './All_Task_Of_class/ex-7_axios/AxiosAPI';
-// import { Registration } from './All_Task_Of_class/ex-8_Formik_form/Registration';
-
-
-
-
+import { Employee } from './All_Task_Of_class/ex-12_EmpData_Print_Crud_validation/Employee';
 
 
 function App() {
@@ -38,8 +19,11 @@ function App() {
     // <DynamicFormMaterial/>
     // <ExaFormikMatrial/>
     // <LanTheme/>
-    <MainHeadr/>
-  );
+    // <MainHeadr/>
+    // <DynamicFormUseFormik/>
+    <Employee/>
+    // <Home/>
+    );
 }
 
 export default App;

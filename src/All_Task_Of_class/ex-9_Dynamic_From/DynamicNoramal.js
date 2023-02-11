@@ -48,8 +48,16 @@ export default function DynamicNoramal() {
             mydata[d[0]][d[1]] = value;
         }
         else {
-            let field = d[1].split("[")[0];
-            let index = Number(d[1].substr(-2, 1));
+            // My logic 
+
+            // let field = d[1].split("[")[0];
+            // let index = Number(d[1].substr(-2, 1));
+            // mydata[d[0]][index][field] = value;
+
+            // Sir logic 
+            let index1 = d[1];
+            let index = index1.substr(index1.indexOf('[') + 1, 1);
+            let field = index1.substring(0, index1.indexOf('['));
             mydata[d[0]][index][field] = value;
         }
 
@@ -91,7 +99,7 @@ export default function DynamicNoramal() {
                         data.education.map((value, index) => {
 
                             return (<div>
-                                <span className='h2'>Education - {index+1}</span>
+                                <span className='h2'>Education - {index + 1}</span>
                                 <div>
                                     <label>Enter your First Name</label>
                                     <input type="text" name={`education.uniName[${index}]`} placeholder='Enter your university' onChange={myhandler} />

@@ -60,6 +60,7 @@ export const Registration = () => {
             </div>
         );
     };
+    
     return (
         <Container maxWidth="sm"
         >
