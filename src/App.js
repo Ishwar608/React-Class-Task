@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import { Employee } from './All_Task_Of_class/ex-12_EmpData_Print_Crud_validation/Employee';
+import { Provider } from 'react-redux'
+import store from './All_Task_Of_class/ReduxData/Store/store'
+import UserLogin from './All_Task_Of_class/ex.13_Thank_Regir_Login/UserLogin';
 
 
 function App() {
@@ -21,9 +23,12 @@ function App() {
     // <LanTheme/>
     // <MainHeadr/>
     // <DynamicFormUseFormik/>
-    <Employee/>
+    // <Employee/>
     // <Home/>
-    );
+    <Provider store={store}>
+      <UserLogin />
+    </Provider>
+  );
 }
 
 export default App;
