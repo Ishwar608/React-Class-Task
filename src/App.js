@@ -1,9 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-import { Provider } from 'react-redux'
-import store from './All_Task_Of_class/ReduxData/Store/store'
-import UserLogin from './All_Task_Of_class/ex.13_Thank_Regir_Login/UserLogin';
 
+// import CounterSaga from './All_Task_Of_class/ex-14_redux_saga_Task/CounterSaga';
+import { Provider } from 'react-redux';
+// import store from './All_Task_Of_class/SagaRedux/store/store';
+// import ProductInfo from './All_Task_Of_class/ex-14_redux_saga_Task/Productinfo';
+// import LoginSaga from './All_Task_Of_class/ex-14_redux_saga_Task/LoginSaga';
+import store from './All_Task_Of_class/Redux-Toolkit/store';
+import CounterTask from './All_Task_Of_class/ex-15_redux_toolkit_Task/CounterTask';
+import PostList from './All_Task_Of_class/ex-15_redux_toolkit_Task/PostList';
 
 function App() {
   return (
@@ -26,8 +30,10 @@ function App() {
     // <Employee/>
     // <Home/>
     <Provider store={store}>
-      <UserLogin />
-    </Provider>
+        <CounterTask/>
+        <PostList/>
+     </Provider>
+
   );
 }
 
