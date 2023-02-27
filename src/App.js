@@ -5,9 +5,10 @@ import { Provider } from 'react-redux';
 // import store from './All_Task_Of_class/SagaRedux/store/store';
 // import ProductInfo from './All_Task_Of_class/ex-14_redux_saga_Task/Productinfo';
 // import LoginSaga from './All_Task_Of_class/ex-14_redux_saga_Task/LoginSaga';
-import store from './All_Task_Of_class/Redux-Toolkit/store';
-import CounterTask from './All_Task_Of_class/ex-15_redux_toolkit_Task/CounterTask';
-import PostList from './All_Task_Of_class/ex-15_redux_toolkit_Task/PostList';
+// import store from './All_Task_Of_class/Redux-Toolkit/store';
+// import CounterTask from './All_Task_Of_class/ex-15_redux_toolkit_Task/CounterTask';
+// import PostList from './All_Task_Of_class/ex-15_redux_toolkit_Task/PostList';
+import MyForm from './All_Task_Of_class/ex-16_custem_validation/MyForm';
 
 function App() {
   return (
@@ -29,11 +30,11 @@ function App() {
     // <DynamicFormUseFormik/>
     // <Employee/>
     // <Home/>
-    <Provider store={store}>
-        <CounterTask/>
-        <PostList/>
-     </Provider>
-
+    // <Provider store={store}>
+    //     <CounterTask/>
+    //     <PostList/>
+    //  </Provider>
+    <MyForm/>
   );
 }
 
